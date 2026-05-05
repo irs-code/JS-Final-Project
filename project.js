@@ -155,14 +155,17 @@ function showText() {
 function setCat1() {
   cat1.x = randomNumber(150,250);
   cat1.y = 0;
+  playSound("sound://category_animals/cat.mp3");
 }
 function setCat2() {
   cat2.x = randomNumber(150,250);
   cat2.y = 0;
+  playSound("sound://category_animals/cat.mp3");
 }
 function setDog() {
   dog.x = randomNumber(150,250);
   dog.y = 0;
+  playSound("sound://category_animals/dog.mp3");
 }
 
 function isDead() { // If you have lost, say game over.
