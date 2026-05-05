@@ -1,6 +1,7 @@
 // Variables
 var lives = 3;
 var points = 0;
+var edges = createEdgeSprites();
 // Create your sprites here
 
 // Kibble
@@ -83,18 +84,19 @@ function catsTouchesKibble(){ // If either cat touches the kibble, it takes away
 function movePlayer(){ // Movement for player
   if (keyDown(RIGHT_ARROW)) {
     player.setAnimation("dogRight");
-    player.x = player.x + 3;
+    player.velocityX = player.velocityX + 0.3;
   }
   if (keyDown(LEFT_ARROW)) {
     player.setAnimation("dogLeft");
-    player.x = player.x - 3;
+    player.velocityX = player.velocityX - 0.3;
   }
   if (keyDown(UP_ARROW)) {
-    player.y = player.y - 3;
+    player.velocityY = player.velocityY - 0.3;
   }
   if (keyDown(DOWN_ARROW)) {
-    player.y = player.y + 3;
+    player.velocityY = player.velocityY + 0.3;
   }
+  player.collide(edges);
 }
 
 function displaceEnemies(){ // Basically lets the plyer displaces the cats
